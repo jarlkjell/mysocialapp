@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material"
 import Header from "./Header";
+import Card from "./Card"
 
 
 import {FancyTheme,DarkTheme} from "../themeProvider/CustomTheme"
@@ -14,7 +15,8 @@ const Container = styled.div
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
-    border: 10px solid yellow;
+    height: 70vh;
+    margin: 0 2.5% 0 2.5%;
 `
 
 const AppContainer = () => {
@@ -26,7 +28,7 @@ const AppContainer = () => {
                 <Header theme={theme} setTheme={setTheme}>
                 </Header>
                 <Container>
-                    <div>something</div>
+                    <Card/>
                     <div>somethingElese</div>
                 </Container>
             </CssBaseline>

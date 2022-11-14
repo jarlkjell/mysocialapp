@@ -17,7 +17,6 @@ const Header = ({theme,setTheme}) => {
             <SetThemeButton theme={theme} setTheme={setTheme}/>
             <Container maxWidth="sm" disableGutters={true}>
                 <Headline>
-                    Test
                 </Headline>
 
             </Container>
