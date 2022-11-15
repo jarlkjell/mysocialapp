@@ -7,7 +7,7 @@ import wojak1 from '../pics/wojak1.png'
 const PictureContainer = styled.div`
     @media screen and (orientation: landscape) {
         height: 70%;
-        width: 45%;
+        width: 60%;
         margin: 2.5% 1% 0 0;
         background-image: url(${nft_place});
         opacity: 0.6;
@@ -17,7 +17,8 @@ const PictureContainer = styled.div`
         background-size: cover;
         background-position: center center;
         background-color: transparent;
-        z-index: 0;
+        position: absolute;
+        z-index: 2;
     }
     @media screen and (orientation: portrait) {
         

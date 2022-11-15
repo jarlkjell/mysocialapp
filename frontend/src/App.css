@@ -1,3 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Nabla&family=Space+Grotesk&display=swap');
 
 
+.input-box {
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-x:auto ;
+    z-index: 1;
+    height: 40%;
+    top: 45%;
+    left: 2.5%;
+    position: absolute;
+    z-index:3;
+}
