@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material"
 import Header from "./"
 import Card from "./login/loginComponents/loginCard/Card"
+import LoginReset from "./login/loginComponents/loginCardRight/LoginReset";
 
 
 
@@ -34,7 +35,7 @@ const Login = () => {
                 </Header>
                 <Container>
                     <Card email={email} password={password} setEmail={setEmail} setPassword={setPassword} />
-                    <div>somethingElese</div>
+                    <LoginReset/>
                 </Container>
             </CssBaseline>
         </ThemeProvider>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material"
 import Header from "./loginComponents/loginCard/Header";
 import Card from "./loginComponents/loginCard/Card"
-
+import LoginReset from "./loginComponents/loginCardRight/LoginReset";
 
 
 import {FancyTheme,DarkTheme} from "../../themeProvider/CustomTheme"
@@ -34,7 +34,7 @@ const Login = () => {
                 </Header>
                 <Container>
                     <Card email={email} password={password} setEmail={setEmail} setPassword={setPassword} />
-                    <div>somethingelse</div>
+                    <LoginReset/>
                 </Container>
             </CssBaseline>
         </ThemeProvider>
