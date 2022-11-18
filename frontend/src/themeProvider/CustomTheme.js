@@ -7,6 +7,9 @@ import "../App.css"
                 main: "#352B44",
                 
             },
+            secondary : {
+                main: "#762AFE",
+            },
             background: {
                 default: "#352B44 "
             },

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material"
-import Header from "./Header";
-import Card from "./Card"
+import Header from "./loginComponents/loginCard/Header";
+import Card from "./loginComponents/loginCard/Card"
 
 
-import {FancyTheme,DarkTheme} from "../themeProvider/CustomTheme"
+
+import {FancyTheme,DarkTheme} from "../../themeProvider/CustomTheme"
 
 
 import styled from "styled-components";
@@ -19,7 +20,11 @@ const Container = styled.div
     margin: 0 2.5% 0 2.5%;
 `
 
-const AppContainer = () => {
+const Login = () => {
+
+    const [email,setEmail] = useState("abc");
+    const [password,setPassword] = useState("abc");
+
 
     const [theme,setTheme] = useState(true);
     return(
@@ -28,8 +33,8 @@ const AppContainer = () => {
                 <Header theme={theme} setTheme={setTheme}>
                 </Header>
                 <Container>
-                    <Card/>
-                    <div>somethingElese</div>
+                    <Card email={email} password={password} setEmail={setEmail} setPassword={setPassword} />
+                    <div>somethingelse</div>
                 </Container>
             </CssBaseline>
         </ThemeProvider>
@@ -39,4 +44,4 @@ const AppContainer = () => {
 
 
 
-export default AppContainer;
+export default Login;

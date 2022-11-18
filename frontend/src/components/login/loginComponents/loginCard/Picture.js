@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import nft_place from '../pics/nft_place.jpg'
-import wojak1 from '../pics/wojak1.png'
+import nft_place from '../../../../pics/nft_place.jpg'
+import wojak1 from '../../../../pics/wojak1.png'
 
 
 

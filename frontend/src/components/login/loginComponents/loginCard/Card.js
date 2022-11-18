@@ -2,6 +2,7 @@ import styled from "styled-components"
 import Picture from "./Picture";
 import LoginInput from "./LoginInput";
 
+
 const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -15,11 +16,18 @@ const CardContainer = styled.div`
 
 `
 
-const Card = () => {
+const text = "Das Melden von Inhalten, die deiner Ansicht nach im Sinne des Netzwerkdurchsetzungsgesetzes (NetzDG) rechtswidrig sind, ist auch dann möglich, wenn du nicht eingeloggt bist."
+
+const Card = ({email,password,setEmail,setPassword}) => {
     return(
-        <CardContainer>
+        <CardContainer sx= {{
+            display: 'flex',
+            flexDirection: 'column',
+
+        }}>
             <Picture/>
-            <LoginInput/>
+            <LoginInput text={text} setEmail={setEmail} setPassword={setPassword} email={email} password={password} />
+            
         </CardContainer>
     );
 }

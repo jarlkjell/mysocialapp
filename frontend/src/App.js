@@ -1,5 +1,6 @@
 import './App.css';
-import AppContainer from './components/AppContainer';
+import Login from "./components/login/Login"
+
 
 
 
@@ -8,7 +9,9 @@ import AppContainer from './components/AppContainer';
 function App() {
 
   return (
-    <AppContainer/>
+    <Login/>
+
+
   );
 }
 
