@@ -5,7 +5,8 @@ const LoginReset = () => {
     return(
         <>
             <QuoteCard/>
-      
+
+   
         </>
     );
 }
