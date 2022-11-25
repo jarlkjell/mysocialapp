@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import ButtonOutline from "./ButtonOutline";
+import {Link} from 'react-router-dom';
 import { Box } from "@mui/system";
 import axios from "axios";
 import {useState} from 'react';
@@ -69,7 +70,7 @@ const QuoteCard = () => {
                 </Box>
                 <Box sx= {{
                     position: 'relative',
-                    top: "20%",
+                    top: "50%",
                     display: 'flex',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
@@ -80,8 +81,12 @@ const QuoteCard = () => {
 
                     
                 }}>
-                    <ButtonOutline text={"Register"}/>
-                    <ButtonOutline text={"Forgot Password?"}/>
+                    <Link to="/register" style={{textDecoration: 'none'}}>
+                        <ButtonOutline text={"Register"}/>
+                    </Link>
+                    <Link to="/" style={{textDecoration: 'none'}}>
+                        <ButtonOutline text={"Forgot Password?"}/>
+                    </Link>
                 </Box>
                 <Box sx={{
                     mt: "5vh",
