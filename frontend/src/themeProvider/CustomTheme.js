@@ -9,6 +9,7 @@ import "../App.css"
             },
             secondary : {
                 main: "#762AFE",
+                light: "#77678F"
             },
             background: {
                 default: "#352B44 "
