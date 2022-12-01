@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose= require('mongoose');
 const dotenv = require('dotenv');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
 
 dotenv.config();
 
@@ -9,6 +11,7 @@ const app = express()
 const PORT = 3001;
 
 const MONGO_URI = process.env.MONGO_URI;
+const JWT_KEY = process.env.EXPRESS_APP_JWT_KEY;
 
 app.use(express.json());
 
@@ -66,6 +69,42 @@ app.post('/register', async (req,res) => {
     } catch (e) {
         res.status(400).send("User already exists");
     }
+})
+
+//findUser with jwt
+app.post('/login', async (req,res) => {
+    try {
+        const userExist = await User.findOne({
+            email:req.body.email,
+        });
+            
+        if (!userExist) {
+                res.status(400).send("Error User not found!");
+                return 0;
+            
+        } else {
+            const passwordValid = await bcrypt.compare(
+            	req.body.password, userExist.password
+            )
+               
+            if(passwordValid) {
+                const userToken = jwt.sign({
+                    id: userExist.id,
+                    email: userExist.email,
+                    name: userExist.name,
+                    year: userExist.year,
+                    category: userExist.category
+                    }, JWT_KEY, {expiresIn: "7d"})
+                res.status(200).send({status: "200/OK", access: userToken})
+            } else {
+                res.status(401).send("Access Denied!");
+                return 0;
+            }
+        }
+    } catch(e) {
+        res.status(500).send("Server Error!")
+    }
+
 })
 
 app.listen(PORT, () => {
