@@ -26,7 +26,8 @@ const userSchema = new mongoose.Schema({
     name: String,
     password: String,
     year: Date,
-    category: String
+    category: S
+    tring
 })
 const User  = mongoose.model('User',userSchema);
 
