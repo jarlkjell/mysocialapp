@@ -3,6 +3,9 @@ const mongoose= require('mongoose');
 const dotenv = require('dotenv');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { v4: uuidv4 } = require('uuid');
+const auth = require('./auth');
+
 
 
 dotenv.config();
@@ -40,11 +43,12 @@ const User  = mongoose.model('User',userSchema);
 
 
 //Routen
-app.get('/',(req,res) => {
+app.get('/', auth ,(req,res) => {
     res.send("This is the home route");
+
 })
 
-app.get('/health-check',(req,res ) => {
+app.get('/health-check',(req,res) => {
     res.status(200).send("I perfectly work fine on Status 200");
 })
 
@@ -52,7 +56,7 @@ app.post('/register', async (req,res) => {
     try {
         const encryptedPassword = await bcrypt.hash(req.body.password,10);
         const newUser = await User.create({
-            id: req.body.id,
+            id: uuidv4(),
             email: req.body.email,
             password: encryptedPassword,
             year: req.body.year,
