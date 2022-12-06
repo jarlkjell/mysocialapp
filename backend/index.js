@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { v4: uuidv4 } = require('uuid');
 const auth = require('./auth');
+const cors = require('cors')
 
 
 
@@ -16,6 +17,7 @@ const PORT = 3001;
 const MONGO_URI = process.env.MONGO_URI;
 const JWT_KEY = process.env.EXPRESS_APP_JWT_KEY;
 
+app.use(cors())
 app.use(express.json());
 
 app.use(async (req,res,next)=> {
@@ -36,7 +38,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please provide a password!"],
     },
-    year: Date,
+    year: String,
     category: String
 })
 const User  = mongoose.model('User',userSchema);
@@ -52,12 +54,13 @@ app.get('/health-check',(req,res) => {
     res.status(200).send("I perfectly work fine on Status 200");
 })
 
-app.post('/register', async (req,res) => {
+app.post('/registerApi', async (req,res) => {
     try {
         const encryptedPassword = await bcrypt.hash(req.body.password,10);
         const newUser = await User.create({
             id: uuidv4(),
             email: req.body.email,
+            name: req.body.name,
             password: encryptedPassword,
             year: req.body.year,
             category: req.body.category
@@ -76,7 +79,7 @@ app.post('/register', async (req,res) => {
 })
 
 //findUser with jwt
-app.post('/login', async (req,res) => {
+app.post('/loginApi', async (req,res) => {
     try {
         const userExist = await User.findOne({
             email:req.body.email,

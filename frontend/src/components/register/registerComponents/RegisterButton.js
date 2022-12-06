@@ -3,7 +3,7 @@ import { FancyTheme } from '../../../themeProvider/CustomTheme';
 const RegisterButton = () => {
     return(
         <ThemeProvider theme={FancyTheme}>
-            <Button variant="contained" sx={{
+            <Button type='submit' variant="contained" sx={{
                 width: "50%",
                 justifySelf: "center",
                 top: "20%",

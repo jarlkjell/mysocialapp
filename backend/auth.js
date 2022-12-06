@@ -7,7 +7,7 @@ const JWT_KEY = process.env.EXPRESS_APP_JWT_KEY;
 
 module.exports = async(req,res,next) => {
     try {
-        //How to get the token in the request header(which position)
+
         const token = await req.headers.authorization.split(" ")[1];
 
         const decodedToken = await jwt.verify(token,JWT_KEY);
