@@ -7,16 +7,29 @@ import {NativeSelect} from '@mui/material';
 
 
 
-const RegisterFields = () => {
+
+const RegisterFields = ({setValueYear,setValueCategory}) => {
+
+    const handleGetYear = (event) => {
+        event.preventDefault();
+        setValueYear(event.currentTarget.value);
+    }
+    const handleGetCategory = (event) => {
+        event.preventDefault();
+        setValueCategory(event.currentTarget.value);
+    }
+
+
     return(
         <ThemeProvider theme={FancyTheme}>
-            <Box sx={{
+            <Box
+             sx={{
                 display:'grid',
                 gridTemplateColumns: '1fr 1fr'
             }}>
                 <Box
                         
-                component="form"
+
                 //hier kommt onSubmit={handleLogin}
                 sx={{
                 
@@ -34,6 +47,7 @@ const RegisterFields = () => {
                     variant="filled"
                     id="outlined-required"
                     label="Email"
+                    name="email"
                     color="info"
                     sx={{
                         bgcolor: "secondary.light"
@@ -49,6 +63,7 @@ const RegisterFields = () => {
                         id="text-input"
                         label="full name"
                         type="text"
+                        name="fullname"
                         color="info"
                         sx={{
                             bgcolor: "secondary.light"
@@ -60,6 +75,7 @@ const RegisterFields = () => {
                         variant="filled"
                         id="password-input"
                         label="password"
+                        name= "password"
                         type="password"
                         color="info"
                         sx={{
@@ -80,6 +96,7 @@ const RegisterFields = () => {
                                 Category
                                 </InputLabel>
                                 <NativeSelect
+                                    onChange={handleGetCategory}
                                     sx={{
                                         color: "secondary.light"
                                     }}
@@ -101,6 +118,7 @@ const RegisterFields = () => {
                                 Year
                             </InputLabel>
                             <NativeSelect
+                                onChange={handleGetYear}
                                 sx={{
                                     color: "secondary.light",
 
@@ -118,6 +136,7 @@ const RegisterFields = () => {
                         </FormControl>
                     </Box>
                 </Box>
+
             </Box>
         </ThemeProvider>
     );
