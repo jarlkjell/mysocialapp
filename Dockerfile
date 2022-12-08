@@ -1,4 +1,3 @@
-# escape=`
 ARG VERSION = lts-bullseye-slim
 FROM node:$VERSION
 
@@ -6,13 +5,21 @@ FROM node:$VERSION
 WORKDIR /mysocialapp
 
 #install dependencies (clean install) 
-RUN npm ci
+RUN sudo apt install -y curl\
+&& curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - &&\
+&& apt-get install -y nodejs
 
-#make build
-RUN npm run build
+#check version and then make build
+#RUN node -v\
+#&& npm -v\
+#&&npm run build
 
-#expose runnning ports (3000,3001)
+#directory
+WORKDIR mysocialapp
+
+
+#expose runnning TCP ports (3000,3001)
 EXPOSE 3000 3001
 
-#Commands for start
-CMD ["npx","build"]
+
+
