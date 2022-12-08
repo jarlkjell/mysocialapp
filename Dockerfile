@@ -1,9 +1,5 @@
-// .dockerignore
-node_modules
-build
-
-#get node version 16 (alpine for resize)
-From node:16-alpine
+ARG VERSION = latest
+From node:$VERSION
 
 #working directory
 WORKDIR /mysocialapp
