@@ -5,5 +5,6 @@
 
 * docker build . -t mysocialapp
 * docker images | grep mysocialapp #checks image
-* docker run -it -p 3000:3000 -p 3001:3001 --name mysocialapp
+* docker run -it -rm -P --name mysocialapp
+* npm i && cd backend && npm i && cd .. && cd frontend && npm i
 ***
