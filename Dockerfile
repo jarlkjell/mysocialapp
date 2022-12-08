@@ -1,5 +1,5 @@
 ARG VERSION = latest
-From node:$VERSION
+FROM node:$VERSION
 
 #working directory
 WORKDIR /mysocialapp
