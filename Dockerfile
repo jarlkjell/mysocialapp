@@ -1,3 +1,4 @@
+# escape=`
 ARG VERSION = lts-bullseye-slim
 FROM node:$VERSION
 
