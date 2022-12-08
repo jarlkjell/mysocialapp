@@ -1,4 +1,4 @@
-ARG VERSION = latest
+ARG VERSION = lts-bullseye-slim
 FROM node:$VERSION
 
 #working directory
