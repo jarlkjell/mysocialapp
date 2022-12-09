@@ -12,6 +12,7 @@ const RegisterContainer = () => {
     const [valueYear,setValueYear] = useState();
     const [valueCategory, setValueCategory] = useState();
     const LOCAL_STORAGE_KEY = "token";
+
     const handleSubmit = async(event) => {
         event.preventDefault()
         const formData = new FormData(event.currentTarget);
@@ -32,8 +33,15 @@ const RegisterContainer = () => {
             data: credentials
         }
         
+
+        //muss in den login
         const res = await axios(config);
         console.log(res);
+        const data = res.data;
+        console.log(data);
+        
+        //localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(data));
+
 
             
     }
