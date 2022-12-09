@@ -30,4 +30,4 @@ COPY --chown=node:node . /socialapp
 USER node
 
 #cmd arg
-ENTRYPOINT ["npm", "start"]
+#ENTRYPOINT ["npm", "start"]
