@@ -1,20 +1,17 @@
-<<<<<<< HEAD
 # mysocialapp
 <br><hr>
-***
-1. How to Use:
 
-* docker build . -t socialapp
-* docker images | grep socialapp #checks image
-* docker run -it --rm -p 3000:3000 -p 3001:3001 --name socialapp socialapp
-=======
-# mysocialapp
-<br><hr>
-***
-1. How to Use:
+## 1. Setup:
 
-* docker build . -t socialapp
-* docker images | grep socialapp #checks image
-* docker run -it --rm -p 3000:3000 -p 3001:3001 --name socialapp socialapp
->>>>>>> e800094d8ceeb0d7ff27cff2a04c1f2b0ecca4ae
-***
+* Follow the [!Tutorial](https://learn.microsoft.com/en-us/windows/wsl/setup/environment) to set up **WSL2** on your local maschine
+* After that follow the [Tutorial](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers) to get started with **Docker** on your local maschine 
+* Make sure your local maschine matches all the requirements and necessary setups mentioned in the tutorials.
+* Clone the repository in your preferred Distribution with *wsl*. Make sure that **git** is installed, for reference [view Tutorial](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git)
+
+## 2. How to Use:
+
+### Non root user
+* sudo docker build . -t socialapp
+* sudo docker images | grep socialapp #checks image
+* sudo docker run -d -it --rm -p 3000:3000 -p 3001:3001  --name socialapp socialapp 
+
