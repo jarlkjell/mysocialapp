@@ -1,5 +1,5 @@
 import {useEffect,useState} from "react";
-import {jwt_decode} from "jsonwebtoken"
+import jwt_decode from "jwt-decode"
 
 
 

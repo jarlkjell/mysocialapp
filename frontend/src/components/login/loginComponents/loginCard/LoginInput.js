@@ -4,12 +4,15 @@ import '../../../../App.css'
 import FormHelperText from '@mui/material/FormHelperText';
 import {useRef} from 'react'; 
 import CheckBoxText from './CheckBoxText';
-import SignInButton from './SignInButton';
-
+import SignInButton from './SignInButton'
+import { AppContextProvider } from '../../../../provider/appContext';
 
 
 
 const LoginInput = ({email,password,text,setEmail,setPassword}) => {
+    
+
+
 
     const valueEmail = useRef(null);
     const valuePassword = useRef(null);

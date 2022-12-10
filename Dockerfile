@@ -1,8 +1,12 @@
 ARG VERSION=lts-bullseye-slim
 FROM node:$VERSION
 
+#install bash
+RUN sudo apt install bash -y
 
+#use shell bash to start npm commands
 
+SHELL ["/bin/bash", "-c"]
 #install dependencies 
 RUN apt update && apt upgrade 
 RUN apt install -y curl 

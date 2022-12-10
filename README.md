@@ -13,5 +13,5 @@
 ### Non root user
 * sudo docker build . -t socialapp
 * sudo docker images | grep socialapp #checks image
-* sudo docker run -d -it --rm -p 3000:3000 -p 3001:3001  --name socialapp socialapp 
+* sudo docker run -d -it --rm -p 127.0.0.1:3000:3000/tcp -p 127.0.0.1:3001:3001/tcp  --name socialapp socialapp 
 
