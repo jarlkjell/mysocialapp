@@ -1,5 +1,7 @@
 // import styled from "styled-components";
 import Container from '@mui/material/Container'
+import { Box } from '@mui/system';
+
 
 import Headline from "./Headline";
 import SetThemeButton from "./SetThemeButton";
@@ -12,13 +14,20 @@ import SetThemeButton from "./SetThemeButton";
 //     justify-items: center;
 // `
 const Header = ({theme,setTheme}) => {
+    
     return(
+        
         <>
-            <SetThemeButton theme={theme} setTheme={setTheme}/>
+            <Box
+                sx={{
+                    display:'flex'
+                }}>
+                <SetThemeButton theme={theme} setTheme={setTheme}/>
+                
+            </Box>
             <Container maxWidth="sm" disableGutters={true}>
                 <Headline>
                 </Headline>
-
             </Container>
         </>
     );

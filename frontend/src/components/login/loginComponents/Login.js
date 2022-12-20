@@ -3,8 +3,6 @@ import { ThemeProvider, CssBaseline } from "@mui/material"
 import Header from "./loginCard/Header";
 import Card from "./loginCard/Card"
 import LoginReset from "./loginCardRight/LoginReset";
-
-
 import {FancyTheme,DarkTheme} from "../../../themeProvider/CustomTheme"
 
 

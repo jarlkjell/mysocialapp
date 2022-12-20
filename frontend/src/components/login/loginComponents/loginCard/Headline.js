@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const Header = styled.h1`
-  display:flex;
+  display: flex;
   justify-content: center;
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 200%;
@@ -19,11 +19,11 @@ const Header = styled.h1`
 
 const Headline = () => {
     return (
-      <div>
+      <>
         <Header>
           NFT-DEALERS
         </Header>
-      </div>
+      </>
     );
   }
 

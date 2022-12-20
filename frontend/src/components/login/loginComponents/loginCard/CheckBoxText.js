@@ -26,6 +26,7 @@ const CheckBoxText = ({text,checkedBox}) => {
              
              //typo oder hier sx
             />
+        
         </FormGroup>
     );
 }
