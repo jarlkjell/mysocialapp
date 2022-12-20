@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material"
-import Header from "./loginComponents/loginCard/Header";
-import Card from "./loginComponents/loginCard/Card"
-import LoginReset from "./loginComponents/loginCardRight/LoginReset";
+import Header from "./loginCard/Header";
+import Card from "./loginCard/Card"
+import LoginReset from "./loginCardRight/LoginReset";
 
 
-import {FancyTheme,DarkTheme} from "../../themeProvider/CustomTheme"
+import {FancyTheme,DarkTheme} from "../../../themeProvider/CustomTheme"
 
 
 import styled from "styled-components";

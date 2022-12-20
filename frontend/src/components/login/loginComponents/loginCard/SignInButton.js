@@ -17,11 +17,14 @@ const SignInButton = ({valueEmail,valuePassword,setEmail, setPassword, checkedBo
     return(
         <ThemeProvider theme= {FancyTheme}>
             
-            <Button variant="contained" sx= {{
+            <Button variant="contained"
+                type="submit"
+                sx= {{
                 color: 'secondary.main',
                 position: 'relative',
-                top: "80%",
-                width: "50%",
+                top: "55vh",
+                left: "12.5vw",
+                width: "20vw",
                 alignSelf: 'center',
                 fontWeight: 'bold'            
             }} size="large" onClick={loginUser}>

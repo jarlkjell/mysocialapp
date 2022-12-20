@@ -4,7 +4,8 @@ import RegisterFields from "./RegisterFields";
 import {infoText, consentText} from './texts';
 import RegisterButton from "./RegisterButton";
 import { useState } from "react";
-import axios from "axios"
+import axios from "axios";
+import {useNavigate} from 'react-router-dom';
 
 
 
@@ -12,6 +13,7 @@ const RegisterContainer = () => {
     const [valueYear,setValueYear] = useState();
     const [valueCategory, setValueCategory] = useState();
     const LOCAL_STORAGE_KEY = "token";
+    const navigate = useNavigate();
 
     const handleSubmit = async(event) => {
         event.preventDefault()
@@ -39,7 +41,7 @@ const RegisterContainer = () => {
         console.log(res);
         const data = res.data;
         console.log(data);
-        
+        navigate("/");
         //localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(data));
 
 
