@@ -4,14 +4,16 @@ FROM node:$VERSION
 #install bash
 RUN apt install bash -y
 
-#use shell bash to start npm commands
 
-SHELL ["/bin/bash", "-c"]
+
 #install dependencies 
 RUN apt update && apt upgrade 
 RUN apt install -y curl 
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x 
 RUN apt-get install -y nodejs
+
+#use bash shell to start npm commands
+SHELL ["/bin/bash", "-c"]
 
 #check version and then make build
 #RUN node -v\
@@ -28,10 +30,10 @@ EXPOSE 3000 3001
 COPY . /socialapp
 
 #ownership
-COPY --chown=node:node . /socialapp
+#COPY --chown=node:node . /socialapp
 
 #set user to name
-USER node
+#USER node
 
-#cmd arg
+#set --entrypoint in docker run to npm start
 #ENTRYPOINT ["npm", "start"]
